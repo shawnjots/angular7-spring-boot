@@ -18,8 +18,8 @@ steps:
 - script: |
     npm install -g @angular/cli
     npm install
-    ng build --env=qa  --aot --outputPath='dist/lab'
-    ng build --env=prod  --aot --outputPath='dist/prod'
+    ng build --qa  --aot --outputPath='dist/lab'
+    ng build --prod  --aot --outputPath='dist/prod'
   displayName: 'npm install and build'
 
 
