@@ -1,4 +1,4 @@
-const BASE_URI = '35.202.23.45';
+const BASE_URI = '35.222.31.104';
 
 export const environment = {
   production: true,
