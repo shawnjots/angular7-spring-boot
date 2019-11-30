@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../environments/environment';
 
 export class Employee{
   constructor(
@@ -24,14 +25,14 @@ export class HttpClientService {
      getEmployees()
   {
     console.log("test call");
-    return this.httpClient.get<Employee[]>('http://localhost:8080/employees');
+    return this.httpClient.get<Employee[]>(environment.ENV);
   }
 
   public deleteEmployee(employee) {
-    return this.httpClient.delete<Employee>('http://localhost:8080/employees' + '/'+ employee.empId);
+    return this.httpClient.delete<Employee>(environment.ENV + '/'+ employee.empId);
   }
 
   public createEmployee(employee) {
-    return this.httpClient.post<Employee>('http://localhost:8080/employees', employee);
+    return this.httpClient.post<Employee>(environment.ENV, employee);
   }
 }
